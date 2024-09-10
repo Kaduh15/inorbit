@@ -1,0 +1,11 @@
+name: inorbit-server
+
+services:
+  db:
+    image: bitnami/postgresql:13.16.0
+    ports:
+      - 5432:5432/tcp
+    environment:
+      - POSTGRES_USER=${POSTGRES_USER:-docker}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD:-docker}
+      - POSTGRES_DB=${POSTGRES_DB:-inorbit}
