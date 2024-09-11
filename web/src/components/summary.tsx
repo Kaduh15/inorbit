@@ -32,7 +32,7 @@ export function Summary() {
     <div className="py-10 max-w-[480px] px-5 mx-auto flex flex-col gap-6">
       <div className="flex items-center justify-between gap-3">
         <InOrbitIcon />
-        <span className="flex-1">
+        <span className="flex-1 capitalize">
           {firstDayOfWeek} - {lastDayOfWeek}
         </span>
 
@@ -89,9 +89,9 @@ export function Summary() {
                       <CheckCircle2 className="size-4 text-pink-500 " />
                       <span className="text-sm text-zinc-400">
                         Você completou "
-                        <span className="text-zinc-100">{goal.title}</span>" ás{' '}
+                        <span className="text-zinc-100">{goal.title}</span>" às{' '}
                         <span className="text-zinc-100">
-                          {dayjs(goal.completedAt).format('HH:mm').toString()}h
+                          {dayjs(goal.completedAt).format('HH:mm').toString()}
                         </span>{' '}
                       </span>
                     </li>

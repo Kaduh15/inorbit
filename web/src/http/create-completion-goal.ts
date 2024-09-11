@@ -1,6 +1,5 @@
 export async function createGoalCompletion(goalId: string) {
-  // biome-ignore lint/style/noUnusedTemplateLiteral: <explanation>
-  const res = await fetch(`http://localhost:3333/completions`, {
+  const res = await fetch('http://localhost:3333/completions', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -10,5 +9,7 @@ export async function createGoalCompletion(goalId: string) {
     }),
   })
 
-  return res.json()
+  if (!res.ok) {
+    throw new Error('Ocorreu um erro ao completar a meta')
+  }
 }

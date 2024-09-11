@@ -10,7 +10,7 @@ export const createGoals: FastifyPluginAsyncZod = async app => {
       schema: {
         body: z.object({
           title: z.string().min(1),
-          desiredWeeklyFrequency: z.number().min(1).max(7),
+          desiredWeeklyFrequency: z.coerce.number().min(1).max(7),
         }),
       },
     },
